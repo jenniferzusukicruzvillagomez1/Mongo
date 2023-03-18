@@ -1,0 +1,21 @@
+use crud-jzcv;
+
+db.personas.insert({
+    "paterno":"Cruz",
+    "materno":"Villagomez",
+    "nombre":"Jennifer Zusuki",
+    "fecha":"26-08-2003"
+});
+
+db.createUser({
+    user:"mongoadmin",
+    pwd:"134340",
+    roles:[
+        {
+            role: "readWrite",
+            db: "crud-jzcv"
+        }
+    ]
+})
+
+    mongo -u mongoadmin -p 134340 --authenticationDatabase crud-jzcv
