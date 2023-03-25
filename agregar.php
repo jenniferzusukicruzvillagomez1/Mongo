@@ -10,15 +10,15 @@
                 </a>
                 <h2>Agregar nuevo registro</h2>
                 <hr>
-                <form action="" method="post">
+                <form action="./public/procesos/insertar.php" method="post">
                     <label for="paterno" class="mt-3 mb-2">Apellido paterno</label>
-                    <input type="text" name="paterno" class="form-control" id="paterno">
+                    <input type="text" name="paterno" class="form-control" id="paterno" required>
                     <label for="materno" class="mt-3 mb-2">Apellido Materno</label>
                     <input type="text" name="materno" class="form-control" id="materno">
                     <label for="nombre" class="mt-3 mb-2">Nombre</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre">
+                    <input type="text" name="nombre" class="form-control" id="nombre" required>
                     <label for="fecha" class="mt-3 mb-2">Fecha de Nacimiento</label>
-                    <input type="date" name="fecha" class="form-control" id="fecha">
+                    <input type="date" name="fecha" class="form-control" id="fecha" required>
                     <button class="btn btn-primary mt-4">
                         <i class="fa-solid fa-floppy-disk me-2"></i>
                         Agregar

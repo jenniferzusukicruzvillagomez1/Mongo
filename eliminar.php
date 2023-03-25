@@ -1,4 +1,12 @@
-
+<?php
+include "./header.php";
+include "./scripts.php";
+include './public/clases/Conexion.php';
+include './public/clases/Crud.php';
+$crud = new Crud();
+$id = $_POST['_id'];
+$doc = $crud->obtenerdoc($id);
+?>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -18,10 +26,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $doc->paterno ; ?></td>
+                            <td><?php echo $doc->materno ; ?></td>
+                            <td><?php echo $doc->nombre ; ?></td>
+                            <td><?php echo $doc->fecha ; ?></td>
                         </tr>
                     </tbody>
                 </table>           
@@ -30,7 +38,8 @@
                     <p>¿Esta seguro de eliminar este registro?</p>
                     <p>Una vez eliminado no podrá ser recuperado</p>
                 </div>
-                <form action="">
+                <form action="./public/procesos/eliminar.php" method="post">
+                <input type="text" name="_id" value="<?php echo $doc->_id?>" hidden>
                     <button class="btn btn-danger">
                         <i class="fa-solid fa-user-xmark"></i>Eliminar
                     </button>
@@ -40,7 +49,3 @@
     </div>
   </div>
 </div>
-<?php
-include "./header.php";
-include "./scripts.php"
-?>
